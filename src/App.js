@@ -1,6 +1,7 @@
+// Components
+import Directory from './components/Directory/Directory';
+
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
-export default App
+	return <Directory />;
+};
+export default App;
