@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 
 // Contexts
 import { UserContext } from '../../contexts/userContext';
-import { CartContext } from '../../contexts/dropdownContext';
+import { CartContext } from '../../contexts/cartContext';
 
 // Components
 import CartIcon from '../../components/CartIcon/CartIcon';

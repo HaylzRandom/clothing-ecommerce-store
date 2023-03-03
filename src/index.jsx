@@ -8,7 +8,7 @@ import App from './App';
 // Contexts
 import { UserProvider } from './contexts/userContext';
 import { ProductsProvider } from './contexts/productsContext';
-import { CartProvider } from './contexts/dropdownContext';
+import { CartProvider } from './contexts/cartContext';
 
 // Styles
 import './index.scss';
