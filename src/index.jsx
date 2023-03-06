@@ -7,7 +7,7 @@ import App from './App';
 
 // Contexts
 import { UserProvider } from './contexts/userContext';
-import { ProductsProvider } from './contexts/productsContext';
+import { CategoriesProvider } from './contexts/CategoriesContext';
 import { CartProvider } from './contexts/cartContext';
 
 // Styles
@@ -18,11 +18,11 @@ root.render(
 	<React.StrictMode>
 		<Router>
 			<UserProvider>
-				<ProductsProvider>
+				<CategoriesProvider>
 					<CartProvider>
 						<App />
 					</CartProvider>
-				</ProductsProvider>
+				</CategoriesProvider>
 			</UserProvider>
 		</Router>
 	</React.StrictMode>
