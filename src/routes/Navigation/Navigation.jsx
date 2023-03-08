@@ -1,8 +1,11 @@
 import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import { Outlet, Link } from 'react-router-dom';
 
+// Redux Selectors
+import { selectCurrentUser } from '../../store/users/userSelector';
+
 // Contexts
-import { UserContext } from '../../contexts/userContext';
 import { CartContext } from '../../contexts/cartContext';
 
 // Components
@@ -19,7 +22,7 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './navigation.styles.scss';
 
 const Navigation = () => {
-	const { currentUser } = useContext(UserContext);
+	const currentUser = useSelector(selectCurrentUser);
 	const { isCartOpen } = useContext(CartContext);
 
 	// Handlers
