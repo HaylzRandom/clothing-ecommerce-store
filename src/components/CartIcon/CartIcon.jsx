@@ -7,7 +7,7 @@ import {
 } from '../../store/cart/cartSelector';
 
 // Redux Actions
-import { setIsCartOpen } from '../../store/cart/cartAction';
+import { setIsCartOpen } from '../../store/cart/cartSlice';
 
 // Cart Icon
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';

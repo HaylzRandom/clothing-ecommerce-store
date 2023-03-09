@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import './category.styles.scss';
 
 // Redux Selectors
-import { selectCategoriesMap } from '../../store/categories/categorySelector';
+import { selectCategoriesMap } from '../../store/categories/categoriesSelector';
 
 // Components
 import ProductCard from '../../components/ProductCard/ProductCard';

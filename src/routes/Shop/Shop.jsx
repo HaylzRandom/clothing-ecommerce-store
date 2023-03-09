@@ -8,8 +8,8 @@ import {
 	getCategoriesAndDocuments,
 } from '../../utils/firebase/firebase';
 
-// Redux Category Actions
-import { setCategories } from '../../store/categories/categoryAction';
+// Redux Actions
+import { setCategories } from '../../store/categories/categoriesSlice';
 
 // Styles
 import './shop.styles.scss';

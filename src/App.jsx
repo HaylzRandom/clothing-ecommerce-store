@@ -8,8 +8,8 @@ import {
 	createUserDocumentFromAuth,
 } from './utils/firebase/firebase';
 
-// Redux User Actions
-import { setCurrentUser } from './store/users/userAction';
+// Redux Actions
+import { setCurrentUser } from './store/user/userSlice';
 
 // Routes
 import Navigation from './routes/Navigation/Navigation';
@@ -28,7 +28,11 @@ const App = () => {
 				createUserDocumentFromAuth(user);
 			}
 
-			dispatch(setCurrentUser(user));
+			const pickedUser =
+				user && (({ accessToken, email }) => ({ accessToken, email }))(user);
+
+			console.log(setCurrentUser(pickedUser));
+			dispatch(setCurrentUser(pickedUser));
 		});
 
 		return unsubscribe;

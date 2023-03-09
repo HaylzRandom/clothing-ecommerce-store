@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Outlet, Link } from 'react-router-dom';
 
 // Redux Selectors
-import { selectCurrentUser } from '../../store/users/userSelector';
+import { selectCurrentUser } from '../../store/user/userSelector';
 import { selectIsCartOpen } from '../../store/cart/cartSelector';
 
 // Components
