@@ -9,7 +9,7 @@ import {
 } from '../../utils/firebase/firebase';
 
 // Redux Category Actions
-import { setCategoriesMap } from '../../store/categories/categoryAction';
+import { setCategories } from '../../store/categories/categoryAction';
 
 // Styles
 import './shop.styles.scss';
@@ -28,9 +28,9 @@ const Shop = () => {
 
 	useEffect(() => {
 		const getCategoriesMap = async () => {
-			const categoryMap = await getCategoriesAndDocuments();
-			/* console.log(categoryMap); */
-			dispatch(setCategoriesMap(categoryMap));
+			const categoriesArray = await getCategoriesAndDocuments();
+			// console.log(categoriesArray);
+			dispatch(setCategories(categoriesArray));
 		};
 
 		getCategoriesMap();
