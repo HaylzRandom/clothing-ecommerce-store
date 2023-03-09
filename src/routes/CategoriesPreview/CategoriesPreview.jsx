@@ -1,16 +1,16 @@
-import { useContext } from 'react';
+import { useSelector } from 'react-redux';
+
+// Redux Selectors
+import { selectCategoriesMap } from '../../store/categories/categoriesSelector';
 
 // Styles
 import './categoriesPreview.styles.scss';
-
-// Context
-import { CategoriesContext } from '../../contexts/CategoriesContext';
 
 // Components
 import CategoryPreview from '../../components/CategoryPreview/CategoryPreview';
 
 const CategoriesPreview = () => {
-	const { categoriesMap } = useContext(CategoriesContext);
+	const categoriesMap = useSelector(selectCategoriesMap);
 
 	return (
 		<>
