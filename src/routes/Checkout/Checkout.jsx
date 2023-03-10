@@ -8,6 +8,7 @@ import {
 
 // Components
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import PaymentForm from '../../components/PaymentForm/PaymentForm';
 
 // Styles
 import './checkout.styles.scss';
@@ -39,6 +40,7 @@ const Checkout = () => {
 				<CheckoutItem key={cartItem.id} cartItem={cartItem} />
 			))}
 			<span className='total'>Total: £{cartTotal}</span>
+			<PaymentForm />
 		</div>
 	);
 };
