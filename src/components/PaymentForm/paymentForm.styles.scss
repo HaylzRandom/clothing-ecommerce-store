@@ -1,21 +1,41 @@
 .payment-form-container {
-	height: 300px;
+	height: 400px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
+.testing-information-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	column-gap: 25px;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 15px;
+	box-shadow: 5px 5px 5px 0px grey;
+
+	ul {
+		list-style: none;
+	}
+
+	li > span {
+		font-weight: bold;
+	}
+}
+
 .form-container {
 	height: 100px;
 	min-width: 500px;
-}
+	padding-bottom: 30px;
 
-h2 {
-	margin-block: 30px;
-}
+	h2 {
+		margin-block: 30px;
+	}
 
-.payment-button {
-	margin-inline: auto;
-	margin-top: 30px;
+	button {
+		margin-inline: auto;
+		margin-top: 30px;
+	}
 }

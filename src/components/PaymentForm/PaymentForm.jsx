@@ -69,13 +69,28 @@ const PaymentForm = () => {
 
 	return (
 		<div className='payment-form-container'>
+			<div className='testing-information-container'>
+				<h2>Test Payment Information:</h2>
+				<ul>
+					<li>
+						<span>Card Number:</span> 4000 0082 6000 0000
+					</li>
+					<li>
+						<span>Expiry Date:</span> 10/25
+					</li>
+					<li>
+						<span>CVC:</span> 123
+					</li>
+					<li>
+						<span>Postcode:</span> ABC 123
+					</li>
+				</ul>
+			</div>
+
 			<form className='form-container' onSubmit={paymentHandler}>
 				<h2>Credit Card Payment: </h2>
 				<CardElement />
-				<Button
-					className='payment-button'
-					buttonType='inverted'
-					isLoading={isProcessingPayment}>
+				<Button buttonType='inverted' isLoading={isProcessingPayment}>
 					Pay Now
 				</Button>
 			</form>

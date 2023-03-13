@@ -58,7 +58,6 @@ To run locally in browser:
 
 ``npm run start``
 
-
 ### Stripe API
 
 You will require your own instance of Stripe API for the code to function properly. Follow instructions below to run project locally:
@@ -78,11 +77,13 @@ You will require your own instance of Stripe API for the code to function proper
 - [ ] Confirmation page after checking out
 - [ ] Profile page allowing user to edit profile details
 - [ ] Add ability to pay via different options
+- [ ] Add a clear cart button
 
 ### Optimisations
 
 - [ ] Have title of website point to current page
 - [ ] Redirect after sign up/login to account
+- [ ] Allow users to delete their account from database
 
 ### UI
 
