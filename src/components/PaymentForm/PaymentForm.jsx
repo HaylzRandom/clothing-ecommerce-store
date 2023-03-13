@@ -72,7 +72,10 @@ const PaymentForm = () => {
 			<form className='form-container' onSubmit={paymentHandler}>
 				<h2>Credit Card Payment: </h2>
 				<CardElement />
-				<Button buttonType='inverted' isLoading={isProcessingPayment}>
+				<Button
+					className='payment-button'
+					buttonType='inverted'
+					isLoading={isProcessingPayment}>
 					Pay Now
 				</Button>
 			</form>
