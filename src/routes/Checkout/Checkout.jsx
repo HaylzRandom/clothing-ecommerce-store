@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux';
 
+// Hooks
+import useTitle from '../../hooks/useTitle';
+
 // Redux Selector
 import {
 	selectCartItems,
@@ -14,6 +17,8 @@ import PaymentForm from '../../components/PaymentForm/PaymentForm';
 import './checkout.styles.scss';
 
 const Checkout = () => {
+	useTitle('Checkout - Clothing eCommerce');
+
 	const cartItems = useSelector(selectCartItems);
 	const cartTotal = useSelector(selectCartTotal);
 

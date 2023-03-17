@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux';
 
+// Hooks
+import useTitle from '../../hooks/useTitle';
+
 // Redux Selectors
 import { selectCategoriesMap } from '../../store/categories/categoriesSelector';
 
@@ -10,6 +13,8 @@ import './categoriesPreview.styles.scss';
 import CategoryPreview from '../../components/CategoryPreview/CategoryPreview';
 
 const CategoriesPreview = () => {
+	useTitle('Shop - Clothing eCommerce');
+
 	const categoriesMap = useSelector(selectCategoriesMap);
 
 	return (

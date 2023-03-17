@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+// Hooks
+import useTitle from '../../hooks/useTitle';
+
 // Styles
 import './category.styles.scss';
 
@@ -14,14 +17,17 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 const Category = () => {
 	const { category } = useParams();
 
-	console.log('render/re-rendering category');
+	console.log(category);
+
+	useTitle(
+		`${category[0].toUpperCase() + category.substring(1)} - Clothing eCommerce`
+	);
 
 	const categoriesMap = useSelector(selectCategoriesMap);
 
 	const [products, setProducts] = useState(categoriesMap[category]);
 
 	useEffect(() => {
-		console.log('effect fired calling setProducts');
 		setProducts(categoriesMap[category]);
 	}, [category, categoriesMap]);
 
