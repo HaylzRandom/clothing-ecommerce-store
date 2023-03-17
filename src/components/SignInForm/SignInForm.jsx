@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Utils
 import {
@@ -19,6 +20,8 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+	const navigate = useNavigate();
+
 	const [formFields, setFormFields] = useState(defaultFormFields);
 
 	const { email, password } = formFields;
@@ -29,6 +32,8 @@ const SignInForm = () => {
 	const signInWithGoogle = async () => {
 		try {
 			await signInWithGooglePopup();
+			// Redirect after login to homepage
+			navigate('/');
 		} catch (error) {
 			switch (error.code) {
 				case 'auth/popup-closed-by-user':
@@ -47,13 +52,16 @@ const SignInForm = () => {
 			await signInAuthUserWithEmailAndPassword(email, password);
 
 			resetFormFields();
+			navigate('/');
 		} catch (error) {
 			switch (error.code) {
 				case 'auth/wrong-password':
 					alert('Incorrect Credentials');
+					resetFormFields();
 					break;
 				case 'auth/user-not-found':
 					alert('Incorrect Credentials');
+					resetFormFields();
 					break;
 				case 'auth/popup-closed-by-user':
 					return;

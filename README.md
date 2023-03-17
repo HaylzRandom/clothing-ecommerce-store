@@ -84,7 +84,7 @@ You will require your own instance of Stripe API for the code to function proper
 ### Optimisations
 
 - [x] Have title of website point to current page
-- [ ] Redirect after sign up/login to account
+- [x] Redirect after sign up/login to account
 - [ ] Allow users to delete their account from database
 
 ### UI
