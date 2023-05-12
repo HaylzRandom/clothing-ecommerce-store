@@ -13,7 +13,7 @@ import CartDropdown from '../../components/CartDropdown/CartDropdown';
 import { signOutUser } from '../../utils/firebase/firebase';
 
 // Logo
-import { ReactComponent as Logo } from '../../assets/crown.svg';
+import { ReactComponent as Logo } from '../../assets/shopping-logo.svg';
 
 // Styles
 import './navigation.styles.scss';

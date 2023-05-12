@@ -16,7 +16,8 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.7",
-    "stripe": "^11.14.0"
+    "stripe": "^11.14.0",
+    "sass": "^1.59.2"
   },
   "scripts": {
     "start": "react-scripts start && set BROWSER=none",
@@ -42,6 +43,6 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.59.2"
+    "netlify-cli": "^15.0.2"
   }
 }

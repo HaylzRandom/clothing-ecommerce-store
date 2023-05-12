@@ -29,8 +29,6 @@ A clothing e-commerce website that allows users to create an account or login wi
 ![Stripe API](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
-
-
 ## Packages
 
 <table>
@@ -54,11 +52,12 @@ A clothing e-commerce website that allows users to create an account or login wi
 
 To run locally on machine (assuming up to date Node Package Manager), first install dependencies:
 
-``npm run install``
+``npm install``
+``npm install netlify-cli -g``
 
 To run locally in browser:
 
-``npm run start``
+``netlify dev``
 
 ### Stripe API
 
@@ -79,13 +78,16 @@ You will require your own instance of Stripe API for the code to function proper
 - [ ] Confirmation page after checking out
 - [ ] Profile page allowing user to edit profile details
 - [ ] Add ability to pay via different options
-- [ ] Add a clear cart button
+- [x] Add a clear cart button
 
 ### Optimisations
 
 - [x] Have title of website point to current page
 - [x] Redirect after sign up/login to account
 - [ ] Allow users to delete their account from database
+- [ ] On signing out, clear cart items
+- [ ] Use toast alerts for confirmation and errors
+- [ ] Empty cart after checking out
 
 ### UI
 
