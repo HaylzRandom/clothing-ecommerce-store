@@ -23,9 +23,15 @@
 		}
 	}
 
-	.total {
+	.checkout-footer {
+		width: 100%;
+		padding: 10px 0;
+		display: flex;
+		justify-content: space-between;
 		margin-top: 30px;
-		margin-left: auto;
-		font-size: 36px;
+
+		.total {
+			font-size: 36px;
+		}
 	}
 } // checkout-item.styles.scss

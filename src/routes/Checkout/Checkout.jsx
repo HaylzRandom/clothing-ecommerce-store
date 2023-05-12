@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Hooks
 import useTitle from '../../hooks/useTitle';
@@ -9,9 +9,13 @@ import {
 	selectCartTotal,
 } from '../../store/cart/cartSelector';
 
+// Redux Actions
+import { deleteItemsFromCart } from '../../store/cart/cartSlice';
+
 // Components
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
 import PaymentForm from '../../components/PaymentForm/PaymentForm';
+import Button from '../../components/Button/Button';
 
 // Styles
 import './checkout.styles.scss';
@@ -19,8 +23,13 @@ import './checkout.styles.scss';
 const Checkout = () => {
 	useTitle('Checkout - Clothing eCommerce');
 
+	const dispatch = useDispatch();
+
 	const cartItems = useSelector(selectCartItems);
 	const cartTotal = useSelector(selectCartTotal);
+
+	// Handlers
+	const deleteItemsHandler = () => dispatch(deleteItemsFromCart(cartItems));
 
 	return (
 		<div className='checkout-container'>
@@ -44,7 +53,11 @@ const Checkout = () => {
 			{cartItems.map((cartItem) => (
 				<CheckoutItem key={cartItem.id} cartItem={cartItem} />
 			))}
-			<span className='total'>Total: £{cartTotal}</span>
+			<div className='checkout-footer'>
+				<Button onClick={deleteItemsHandler}>Empty Cart</Button>
+				<span className='total'>Total: £{cartTotal}</span>
+			</div>
+
 			<PaymentForm />
 		</div>
 	);

@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Helper Functions
+
+// Add Single Item to Cart
 const addCartItem = (cartItems, productToAdd) => {
 	// Find if cartItems contains productToAdd
 	const existingCartItem = cartItems.find(
@@ -19,6 +21,7 @@ const addCartItem = (cartItems, productToAdd) => {
 	return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
+// Reduce Number of Item from Cart
 const removeCartItem = (cartItems, cartItemToRemove) => {
 	// Find cart item to remove
 	const existingCartItem = cartItems.find(
@@ -38,8 +41,15 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
 	);
 };
 
+// Remove Item from Cart
 const clearCartItem = (cartItems, cartItemToClear) => {
 	return cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
+};
+
+// Delete All Items from Cart
+const deleteCartItems = (cartItems) => {
+	console.log('Ping');
+	return (cartItems = []);
 };
 
 const CART_INITIAL_STATE = {
@@ -60,6 +70,9 @@ export const cartSlice = createSlice({
 		clearItemFromCart(state, action) {
 			state.cartItems = clearCartItem(state.cartItems, action.payload);
 		},
+		deleteItemsFromCart(state, action) {
+			state.cartItems = deleteCartItems(state, action.payload);
+		},
 		setIsCartOpen(state, action) {
 			state.isCartOpen = action.payload;
 		},
@@ -72,6 +85,7 @@ export const {
 	addItemToCart,
 	removeItemFromCart,
 	clearItemFromCart,
+	deleteItemsFromCart,
 } = cartSlice.actions;
 
 // Reducer
