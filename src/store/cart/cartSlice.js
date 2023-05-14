@@ -48,7 +48,6 @@ const clearCartItem = (cartItems, cartItemToClear) => {
 
 // Delete All Items from Cart
 const deleteCartItems = (cartItems) => {
-	console.log('Ping');
 	return (cartItems = []);
 };
 
@@ -71,7 +70,7 @@ export const cartSlice = createSlice({
 			state.cartItems = clearCartItem(state.cartItems, action.payload);
 		},
 		deleteItemsFromCart(state, action) {
-			state.cartItems = deleteCartItems(state, action.payload);
+			state.cartItems = deleteCartItems(state.cartItems, action.payload);
 		},
 		setIsCartOpen(state, action) {
 			state.isCartOpen = action.payload;

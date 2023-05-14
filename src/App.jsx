@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
@@ -11,12 +11,17 @@ import {
 // Redux Actions
 import { setCurrentUser } from './store/user/userSlice';
 
-// Routes
-import Navigation from './routes/Navigation/Navigation';
-import Home from './routes/Home/Home';
-import Shop from './routes/Shop/Shop';
-import Authentication from './routes/Authentication/Authentication';
-import Checkout from './routes/Checkout/Checkout';
+// Components
+import Spinner from './components/Spinner/Spinner';
+
+// Routes with Lazy Components
+const Navigation = lazy(() => import('./routes/Navigation/Navigation'));
+const Home = lazy(() => import('./routes/Home/Home'));
+const Shop = lazy(() => import('./routes/Shop/Shop'));
+const Authentication = lazy(() =>
+	import('./routes/Authentication/Authentication')
+);
+const Checkout = lazy(() => import('./routes/Checkout/Checkout'));
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -31,7 +36,7 @@ const App = () => {
 			const pickedUser =
 				user && (({ accessToken, email }) => ({ accessToken, email }))(user);
 
-			console.log(setCurrentUser(pickedUser));
+			//console.log(setCurrentUser(pickedUser));
 			dispatch(setCurrentUser(pickedUser));
 		});
 
@@ -41,14 +46,16 @@ const App = () => {
 	}, []);
 
 	return (
-		<Routes>
-			<Route path='/' element={<Navigation />}>
-				<Route index element={<Home />} />
-				<Route path='shop/*' element={<Shop />} />
-				<Route path='auth' element={<Authentication />} />
-				<Route path='checkout' element={<Checkout />} />
-			</Route>
-		</Routes>
+		<Suspense fallback={<Spinner />}>
+			<Routes>
+				<Route path='/' element={<Navigation />}>
+					<Route index element={<Home />} />
+					<Route path='shop/*' element={<Shop />} />
+					<Route path='auth' element={<Authentication />} />
+					<Route path='checkout' element={<Checkout />} />
+				</Route>
+			</Routes>
+		</Suspense>
 	);
 };
 
