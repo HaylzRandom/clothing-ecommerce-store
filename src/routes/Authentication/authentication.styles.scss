@@ -4,3 +4,29 @@
 	width: 900px;
 	margin: 30px auto;
 }
+
+// Media Queries
+// @media screen and (max-width: 425px) {
+// 	.authentication-container {
+// 		flex-direction: column;
+// 		width: 100%;
+// 		gap: 20px;
+// 		text-align: center;
+// 	}
+// }
+@media screen and (max-width: 800px) {
+	.authentication-container {
+		flex-direction: column;
+		width: 100%;
+		gap: 20px;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	.authentication-container {
+		flex-direction: row;
+		justify-content: space-evenly;
+		text-align: unset;
+	}
+}

@@ -40,3 +40,21 @@
 		cursor: pointer;
 	}
 }
+
+// Media Queries
+@media screen and (max-width: 800px) {
+	.checkout-item-container {
+		font-size: 16px;
+		justify-content: space-between;
+
+		.image-container {
+			width: 20%;
+		}
+
+		.quantity {
+			flex-direction: column;
+			align-items: center;
+			padding-right: 25px;
+		}
+	}
+}

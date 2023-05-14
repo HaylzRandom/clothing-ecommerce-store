@@ -34,4 +34,47 @@
 			font-size: 36px;
 		}
 	}
-} // checkout-item.styles.scss
+}
+
+// Media Queries
+@media screen and (max-width: 800px) {
+	.checkout-container {
+		width: 100%;
+		margin: 25px auto 0;
+
+		.checkout-header {
+			font-size: 0.75rem;
+			padding: 5px 0;
+
+			.header-block {
+				width: 20%;
+
+				&:last-child {
+					width: 15%;
+				}
+			}
+		}
+
+		.checkout-footer {
+			width: 100%;
+			padding: 10px 0;
+			flex-direction: column;
+			row-gap: 10px;
+			text-align: center;
+			justify-content: center;
+			margin-top: 15px;
+
+			.total {
+				font-size: 28px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	.authentication-container {
+		flex-direction: row;
+		justify-content: space-evenly;
+		text-align: unset;
+	}
+}
