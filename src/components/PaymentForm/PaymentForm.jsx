@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { toast } from 'react-toastify';
 
 // Components
 import Button from '../Button/Button';
@@ -60,10 +61,10 @@ const PaymentForm = () => {
 		setIsProcessingPayment(false);
 
 		if (paymentResult.error) {
-			alert(paymentResult.error);
+			toast.error(paymentResult.error);
 		} else {
 			if (paymentResult.paymentIntent.status === 'succeeded') {
-				alert('Payment Successful!');
+				toast.success('Payment Successful!');
 			}
 		}
 	};

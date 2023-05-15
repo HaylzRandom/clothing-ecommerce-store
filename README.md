@@ -46,6 +46,12 @@ A clothing e-commerce website that allows users to create an account or login wi
     <tr><td>redux-persist</td><td>Used with redux to persist and rehydrate a redux store. Will persist cart products, user state and what products have been fetched.</td></tr>
     <tr><td>reselect</td><td>Used with redux to create memoized selectors.</td></tr>
     <tr><td>stripe</td><td>Provides access to Stripe API to server-side code. Used specicially for netlify functions to connect to Stripe API using API key and also creating the payment object that is sent to Stripe.</td></tr>
+    <tr><td>sass</td><td>Used to style React App using SCSS</td></tr>
+    <tr><td>@fortawesome/fontawesome-svg-core</td><td>Core package for utilising FontAwesomeIcons in React</td></tr>
+    <tr><td>@fortawesome/free-regular-svg-icons</td><td>FontAwesome Icon pack for free regular icons</td></tr>
+    <tr><td>@fortawesome/free-solid-svg-icons</td><td>FontAwesome Icon pack for freesolid icons</td></tr>
+    <tr><td>@fortawesome/react-fontawesome</td><td>Package containing FontAwesome React component to allow easy use of icons in components</td></tr>
+    <tr><td>react-toastify</td><td>Package for displaying stylish toast notifications</td></tr>
 </table>
 
 ## Install Instructions
@@ -53,6 +59,7 @@ A clothing e-commerce website that allows users to create an account or login wi
 To run locally on machine (assuming up to date Node Package Manager), first install dependencies:
 
 ``npm install``
+
 ``npm install netlify-cli -g``
 
 To run locally in browser:
@@ -76,6 +83,7 @@ You will require your own instance of Stripe API for the code to function proper
 ### Features
 
 - [ ] Confirmation page after checking out
+- [ ] Attach orders to users (store inside Firebase)
 - [ ] Profile page allowing user to edit profile details
 - [ ] Add ability to pay via different options
 - [x] Add a clear cart button
@@ -86,10 +94,10 @@ You will require your own instance of Stripe API for the code to function proper
 - [x] Redirect after sign up/login to account
 - [ ] Allow users to delete their account from database
 - [ ] On signing out, clear cart items
-- [ ] Use toast alerts for confirmation and errors
+- [x] Use toast alerts for confirmation and errors
 - [ ] Empty cart after checking out
 
 ### UI
 
-- [ ] Mobile Stylings
+- [x] Mobile Stylings
 - [ ] Colour Themes

@@ -5,6 +5,7 @@
 	row-gap: 50px;
 }
 
+// Media Queries
 @media screen and (max-width: 800px) {
 	.products-container {
 		grid-template-columns: repeat(2, 1fr);

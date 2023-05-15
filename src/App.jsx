@@ -2,6 +2,10 @@ import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
+// React Toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // Utils
 import {
 	onAuthStateChangedListener,
@@ -36,7 +40,6 @@ const App = () => {
 			const pickedUser =
 				user && (({ accessToken, email }) => ({ accessToken, email }))(user);
 
-			//console.log(setCurrentUser(pickedUser));
 			dispatch(setCurrentUser(pickedUser));
 		});
 
@@ -55,6 +58,7 @@ const App = () => {
 					<Route path='checkout' element={<Checkout />} />
 				</Route>
 			</Routes>
+			<ToastContainer />
 		</Suspense>
 	);
 };

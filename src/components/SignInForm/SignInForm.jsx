@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 // Utils
 import {
@@ -34,6 +35,7 @@ const SignInForm = () => {
 			await signInWithGooglePopup();
 			// Redirect after login to homepage
 			navigate('/');
+			toast.success('Login Successful!');
 		} catch (error) {
 			switch (error.code) {
 				case 'auth/popup-closed-by-user':
@@ -53,14 +55,15 @@ const SignInForm = () => {
 
 			resetFormFields();
 			navigate('/');
+			toast.success('Login Successful!');
 		} catch (error) {
 			switch (error.code) {
 				case 'auth/wrong-password':
-					alert('Incorrect Credentials');
+					toast.error('Incorrect Credentials');
 					resetFormFields();
 					break;
 				case 'auth/user-not-found':
-					alert('Incorrect Credentials');
+					toast.error('Incorrect Credentials');
 					resetFormFields();
 					break;
 				case 'auth/popup-closed-by-user':

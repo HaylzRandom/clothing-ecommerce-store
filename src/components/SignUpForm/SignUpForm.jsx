@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 // Utils
 import {
@@ -36,7 +37,7 @@ const SignUpForm = () => {
 
 		// Check if passwords match
 		if (password !== confirmPassword) {
-			alert('Passwords do not match');
+			toast.error('Passwords do not match');
 			return;
 		}
 
@@ -52,7 +53,7 @@ const SignUpForm = () => {
 			navigate('/');
 		} catch (error) {
 			if (error.code === 'auth/email-already-in-use') {
-				alert('Email already in use');
+				toast.error('Email already in use');
 				resetFormFields();
 			} else {
 				console.log('user creation error: ', error);
