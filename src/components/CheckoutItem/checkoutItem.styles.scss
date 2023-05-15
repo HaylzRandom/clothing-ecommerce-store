@@ -25,8 +25,11 @@
 
 	.quantity {
 		display: flex;
+		align-items: center;
+		column-gap: 15px;
 
-		.arrow {
+		.minus,
+		.plus {
 			cursor: pointer;
 		}
 
@@ -36,13 +39,14 @@
 	}
 
 	.remove-button {
-		padding-left: 12px;
+		padding-inline: 12px;
 		cursor: pointer;
+		font-size: 25px;
 	}
 }
 
 // Media Queries
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 425px) {
 	.checkout-item-container {
 		font-size: 16px;
 		justify-content: space-between;

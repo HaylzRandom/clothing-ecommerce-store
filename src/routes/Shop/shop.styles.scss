@@ -4,3 +4,11 @@
 	column-gap: 10px;
 	row-gap: 50px;
 }
+
+@media screen and (max-width: 800px) {
+	.products-container {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 10px;
+		row-gap: 25px;
+	}
+}

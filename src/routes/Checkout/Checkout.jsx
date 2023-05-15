@@ -28,6 +28,8 @@ const Checkout = () => {
 	const cartItems = useSelector(selectCartItems);
 	const cartTotal = useSelector(selectCartTotal);
 
+	console.log(cartItems);
+
 	// Handlers
 	const deleteItemsHandler = () => dispatch(deleteItemsFromCart(cartItems));
 
@@ -50,9 +52,18 @@ const Checkout = () => {
 					<span>Remove</span>
 				</div>
 			</div>
-			{cartItems.map((cartItem) => (
+
+			{cartItems.length > 0 ? (
+				cartItems.map((cartItem) => (
+					<CheckoutItem key={cartItem.id} cartItem={cartItem} />
+				))
+			) : (
+				<p className='cart-empty'>Cart is empty, why not browse?</p>
+			)}
+
+			{/* {cartItems.map((cartItem) => (
 				<CheckoutItem key={cartItem.id} cartItem={cartItem} />
-			))}
+			))} */}
 			<div className='checkout-footer'>
 				<Button onClick={deleteItemsHandler}>Empty Cart</Button>
 				<span className='total'>Total: £{cartTotal}</span>
