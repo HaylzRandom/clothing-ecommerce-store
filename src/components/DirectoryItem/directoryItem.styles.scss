@@ -67,3 +67,22 @@
 		}
 	}
 }
+
+// Media Queries
+@media screen and (max-width: 800px) {
+	.directory-item-container {
+		height: 200px;
+
+		.directory-item-body {
+			padding: 0 15px;
+		}
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.directory-item-container {
+		.directory-item-body {
+			padding: 0 5px;
+		}
+	}
+}

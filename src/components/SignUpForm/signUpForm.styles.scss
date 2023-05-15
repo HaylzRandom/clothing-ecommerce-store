@@ -7,3 +7,14 @@
 		margin: 10px 0;
 	}
 }
+
+// Media Queries
+@media screen and (max-width: 425px) {
+	.sign-up-container {
+		max-width: 250px;
+
+		Button {
+			margin: auto;
+		}
+	}
+}

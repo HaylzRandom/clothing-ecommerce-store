@@ -40,12 +40,54 @@
 		font-size: 18px;
 
 		.name {
-			width: 90%;
+			width: 95%;
 			margin-bottom: 15px;
 		}
 
-		.price {
-			width: 10%;
+		// .price {
+		// 	width: 5%;
+		// }
+	}
+}
+
+// Media Queries
+@media screen and (max-width: 800px) {
+	.product-card-container {
+		width: 40vw;
+
+		button {
+			display: block;
+			opacity: 0.9;
+			min-width: unset;
+			padding: 0 10px;
+		}
+
+		&:hover {
+			img {
+				opacity: unset;
+			}
+
+			button {
+				opacity: unset;
+			}
+		}
+
+		.footer {
+			.price {
+				width: unset;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.product-card-container {
+		.footer {
+			font-size: 16px;
+
+			// .price {
+			// 	width: unset;
+			// }
 		}
 	}
 }
