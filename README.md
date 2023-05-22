@@ -82,7 +82,7 @@ You will require your own instance of Stripe API for the code to function proper
 
 ### Features
 
-- [ ] Confirmation page after checking out
+- [x] Confirmation page after checking out
 - [ ] Attach orders to users (store inside Firebase)
 - [ ] Profile page allowing user to edit profile details
 - [ ] Add ability to pay via different options
@@ -95,7 +95,7 @@ You will require your own instance of Stripe API for the code to function proper
 - [ ] Allow users to delete their account from database
 - [ ] On signing out, clear cart items
 - [x] Use toast alerts for confirmation and errors
-- [ ] Empty cart after checking out
+- [x] Empty cart after checking out
 
 ### UI
 

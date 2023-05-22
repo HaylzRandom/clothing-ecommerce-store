@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { toast } from 'react-toastify';
 
@@ -10,12 +11,18 @@ import Button from '../Button/Button';
 import { selectCartTotal } from '../../store/cart/cartSelector';
 import { selectCurrentUser } from '../../store/user/userSelector';
 
+// Redux Handlers
+import { deleteItemsFromCart } from '../../store/cart/cartSlice';
+
 // Styles
 import './paymentForm.styles.scss';
 
 const PaymentForm = () => {
 	const stripe = useStripe();
 	const elements = useElements();
+
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const amount = useSelector(selectCartTotal);
 	const currentUser = useSelector(selectCurrentUser);
@@ -61,11 +68,10 @@ const PaymentForm = () => {
 		setIsProcessingPayment(false);
 
 		if (paymentResult.error) {
-			toast.error(paymentResult.error);
+			toast.error(paymentResult.error.message);
 		} else {
-			if (paymentResult.paymentIntent.status === 'succeeded') {
-				toast.success('Payment Successful!');
-			}
+			dispatch(deleteItemsFromCart());
+			navigate('/order-success');
 		}
 	};
 
