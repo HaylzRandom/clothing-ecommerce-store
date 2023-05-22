@@ -1,0 +1,30 @@
+.profile-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+
+	.profile-form {
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 10em;
+
+		Button {
+			margin-inline: auto;
+			align-self: center;
+		}
+	}
+}
+
+// Media Queries
+@media screen and (max-width: 800px) {
+	.profile-container {
+		.profile-form {
+			grid-template-columns: 1fr;
+			column-gap: 0;
+			row-gap: 0;
+		}
+	}
+}

@@ -1,3 +1,4 @@
+import { isEmpty } from '@firebase/util';
 import { initializeApp } from 'firebase/app';
 import {
 	getAuth,
@@ -33,7 +34,7 @@ const firebaseConfig = {
 	appId: '1:351295543531:web:e72860c9d0d2d20f30c6ae',
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 // Database
 export const db = getFirestore();
@@ -76,24 +77,27 @@ export const createUserDocumentFromAuth = async (
 
 	const userDocRef = doc(db, 'users', userAuth.uid);
 
-	/* console.log(userDocRef); */
-
-	const userSnapshot = await getDoc(userDocRef);
-	/* console.log(userSnapshot);
-	console.log(userSnapshot.exists()); */
-
 	// Check if user data exists
+	const userSnapshot = await getDoc(userDocRef);
 
 	// If user data does not exist
 	if (!userSnapshot.exists()) {
 		// Create / Set the document with the data from userAuth in my collection
-		const { displayName, email } = userAuth;
+		const { email, providerId } = userAuth.providerData[0];
+		let { displayName } = userAuth.providerData[0];
+
 		const createdAt = new Date();
+
+		// If email and password being used, displayName will need to be retrieved from additionalInfo prop
+		if (!displayName && !isEmpty(additionalInfo)) {
+			displayName = additionalInfo.displayName;
+		}
 
 		try {
 			await setDoc(userDocRef, {
 				displayName,
 				email,
+				providerId,
 				createdAt,
 				...additionalInfo,
 			});

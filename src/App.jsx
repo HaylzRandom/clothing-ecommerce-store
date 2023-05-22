@@ -27,6 +27,7 @@ const Authentication = lazy(() =>
 );
 const Checkout = lazy(() => import('./routes/Checkout/Checkout'));
 const OrderSuccess = lazy(() => import('./routes/OrderSuccess/OrderSuccess'));
+const Profile = lazy(() => import('./routes/Profile/Profile'));
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -58,6 +59,7 @@ const App = () => {
 					<Route path='auth' element={<Authentication />} />
 					<Route path='checkout' element={<Checkout />} />
 					<Route path='order-success' element={<OrderSuccess />} />
+					<Route path='profile' element={<Profile />} />
 				</Route>
 			</Routes>
 			<ToastContainer />

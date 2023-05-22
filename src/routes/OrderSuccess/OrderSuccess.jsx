@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom';
 
+// Hooks
+import useTitle from '../../hooks/useTitle';
+
 // Components
 import Button from '../../components/Button/Button';
 
 // Styles
-import './orderSuccess.scss';
+import './orderSuccess.styles.scss';
 
 const OrderSuccess = () => {
+	useTitle('Clothing eCommerce - Order Successful');
+
 	return (
 		<div className='order-success'>
 			<h1 className='title'>Order Successful! 🥳 </h1>

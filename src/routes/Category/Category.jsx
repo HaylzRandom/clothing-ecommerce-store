@@ -17,8 +17,6 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 const Category = () => {
 	const { category } = useParams();
 
-	console.log(category);
-
 	useTitle(
 		`${category[0].toUpperCase() + category.substring(1)} - Clothing eCommerce`
 	);
